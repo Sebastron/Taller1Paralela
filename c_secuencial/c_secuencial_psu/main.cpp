@@ -22,8 +22,7 @@ int aleatoreo(int inferior, int superior){
 
 int main(int argc, char** argv) {
     srand((unsigned int) time(0));
-    std::string pyc(";");
-    std::cout << "Taller 1: C++, OpenMP y Dart" << std::endl;
+    std::cout << "Taller 1: C++ secuencial" << std::endl;
     std::ofstream archivoSalida("prompuntajes.csv");
     for (unsigned long rut = 14916641; rut <= 19932391; rut++) {
         float nem = aleatoreo(475, 750);
