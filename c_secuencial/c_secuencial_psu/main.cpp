@@ -2,7 +2,6 @@
 #include <fstream>
 #include <cstdlib>
 #include <ctime>
-#include <omp.h>
 #include <string>
 #include <sstream>
 
@@ -10,23 +9,24 @@ using namespace std;
 
 struct promedio{
     std::string rut;
-    int ranking;
-    int nem;
-    int matematica;
-    int lenguaje;
-    int ciencias;
-    int historia;
+    float ranking;
+    float nem;
+    float matematica;
+    float lenguaje;
+    float ciencias;
+    float historia;
 
 };
 
 void integrantes(){
+    char a = 160;
     std::cout << std::endl << "Integrantes:" << std::endl;
-    std::cout << "Sebastián Garrido Valenzuela" << std::endl;
+    std::cout << "Sebasti"<<a<<"n Garrido Valenzuela" << std::endl;
     std::cout << "Ramiro Uribe Garrido" << std::endl;
-    std::cout << "Javier Gálvez González" << std::endl;
+    std::cout << "Javier G"<<a<<"lvez González" << std::endl;
 }   
 
-float fpromedio(int nem, int ranking, int matematica, int lenguaje, int ciencia, int historia){
+float fpromedio(float nem, float ranking, float matematica, float lenguaje, float ciencia, float historia){
     return (nem + ranking + matematica + lenguaje + historia + ciencia)/6;
 }
 
@@ -87,17 +87,17 @@ void generarprom(){
             case 0:
                 prueba.rut = dato;
             case 1:
-                prueba.nem = std::stoi(dato);
+                prueba.nem = std::stof(dato);
             case 2:
-                prueba.ranking = std::stoi(dato);
+                prueba.ranking = std::stof(dato);
             case 3:
-                prueba.matematica =std::stoi(dato);
+                prueba.matematica =std::stof(dato);
             case 4:
-                prueba.lenguaje =std::stoi(dato);
+                prueba.lenguaje =std::stof(dato);
             case 5:
-                prueba.historia =std::stoi(dato);
+                prueba.historia =std::stof(dato);
             case 6:
-                prueba.ciencias=std::stoi(dato);
+                prueba.ciencias=std::stof(dato);
             break;
             }
         }
@@ -112,7 +112,7 @@ void generarprom(){
 }
 
 int main(int argc, char** argv) {
-    std::cout << "Taller 1: C++ con OpenMP" << std::endl;
+    std::cout << "Taller 1: C++ secuencial" << std::endl;
     bool comprobacion;
     comprobacion = existe ();
     if(!comprobacion){
