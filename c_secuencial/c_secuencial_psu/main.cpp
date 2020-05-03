@@ -18,7 +18,7 @@ struct promedio{
 
 };
 
-void integrantes(){
+void integrantes(){ //Integrantes del grupo
     char a = 160;
     std::cout << std::endl << "Integrantes:" << std::endl;
     std::cout << "Sebasti"<<a<<"n Garrido Valenzuela" << std::endl;
@@ -28,12 +28,13 @@ void integrantes(){
 
 float fpromedio(float nem, float ranking, float matematica, float lenguaje, float ciencia, float historia){
     return (nem + ranking + matematica + lenguaje + historia + ciencia)/6;
-}
+} //Funcion para obtener el promedio de los 6 puntajes dados
 
 int aleatoreo(int inferior, int superior){
     return (rand() % (superior - (inferior + 1))) +inferior;
 }
 
+//Funcion donde genere ek archivo puntajes.csv
 void main_profe() {
     srand((unsigned int) time(0));
     std::string pyc(";");
@@ -57,7 +58,7 @@ void main_profe() {
     archivoSalida.close();
     std::cout << std::endl << "Archivo puntajes.csv creado" << std::endl;
 }
-
+//Funcion para verificar si existe o no el archivo puntajes.csv
 bool existe(){
     std::fstream archivo;
     std::string linea_existente;
@@ -73,6 +74,9 @@ bool existe(){
     }
 }
 
+//Funcion que genera otro archivo propuntajes, 
+//donde se obtiene los promedios de puntajes de cada
+//leyendo desde el archivo puntajes.csv
 void generarprom(){
     std::ofstream archivoSalida("prompuntajes.csv");
     promedio prueba;
@@ -111,6 +115,7 @@ void generarprom(){
     
 }
 
+//Funcion main
 int main(int argc, char** argv) {
     std::cout << "Taller 1: C++ secuencial" << std::endl;
     bool comprobacion;
