@@ -19,7 +19,7 @@ struct promedio{
 
 };
 
-void integrantes(){
+void integrantes(){  //Integrantes del grupo
     char a = 160;
     std::cout << std::endl << "Integrantes:" << std::endl;
     std::cout << "Sebasti"<<a<<"n Garrido Valenzuela" << std::endl;
@@ -27,14 +27,17 @@ void integrantes(){
     std::cout << "Javier G"<<a<<"lvez González" << std::endl;
 }   
 
+//Funcion que retorne el promedio de los 6 puntajes
 float fpromedio(float nem, float ranking, float matematica, float lenguaje, float ciencia, float historia){
     return (nem + ranking + matematica + lenguaje + historia + ciencia)/6;
 }
+
 
 int aleatoreo(int inferior, int superior){
     return (rand() % (superior - (inferior + 1))) +inferior;
 }
 
+//Funcion para generar el archivo puntajes.csv
 void main_profe() {
     srand((unsigned int) time(0));
     std::string pyc(";");
@@ -64,6 +67,7 @@ void main_profe() {
     std::cout << std::endl << "Archivo puntajes.csv creado" << std::endl;
 }
 
+//Funcion para verificar si existe el archivo puntaje.csv
 bool existe(){
     std::fstream archivo;
     std::string linea_existente;
@@ -79,6 +83,9 @@ bool existe(){
     }
 }
 
+//Funcion que genera otro archivo propuntajes, 
+//donde se obtiene los promedios de puntajes de cada
+//leyendo desde el archivo puntajes.csv
 void generarprom(){
     std::ofstream archivoSalida("prompuntajes.csv");
     promedio prueba;
@@ -127,6 +134,7 @@ void generarprom(){
     
 }
 
+//Funcion main
 int main(int argc, char** argv) {
     std::cout << "Taller 1: C++ con OpenMP" << std::endl;
     bool comprobacion;
